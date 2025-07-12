@@ -4,13 +4,7 @@ project(takeaway VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(LIBTINS REQUIRED libtins)
-
-add_executable(takeaway main.cpp)
-
-target_include_directories(takeaway PRIVATE ${LIBTINS_INCLUDE_DIRS})
-target_link_libraries(takeaway ${LIBTINS_LIBRARIES})
+add_subdirectory(src)
 
 include(CTest)
 enable_testing()
