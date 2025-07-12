@@ -20,6 +20,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install libtins
+      # Install libtins using pkg-config
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libtins-dev
     - uses: actions/checkout@v4
 
     - name: Configure CMake
